@@ -10,6 +10,6 @@
   vars:
     __profile_name:         "{{ profile_name | default('AppSrv01') }}"
     __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
-    __servers:              "{{ servers }}"
+    __servers:              "{{ wasservers }}"
   roles:
     - was-server-stop
