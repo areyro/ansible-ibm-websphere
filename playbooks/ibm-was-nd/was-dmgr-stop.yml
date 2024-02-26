@@ -7,7 +7,7 @@
   hosts:                    dmgr
   become:                   true
   vars:
-    #__profile_name:         "{{ profile_name | default('Dmgr01') }}"
-    #__was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
+    __profile_name:         "{{ profile_name | default('Dmgr01') }}"
+    __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
   roles:
-    - was-dmgr-stop
+    - roles/was-dmgr-stop
