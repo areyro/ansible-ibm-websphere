@@ -7,7 +7,7 @@
   hosts:                    was_servers
   become:                   true
   vars:
-    #__profile_name:         "{{ profile_name | default('AppSrv01') }}"
-    #__was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
+    __profile_name:         "{{ profile_name | default('AppSrv01') }}"
+    __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
   roles:
-    - was-nodeagent-stop
+    - roles/was-nodeagent-stop
