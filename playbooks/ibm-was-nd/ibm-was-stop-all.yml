@@ -1,13 +1,14 @@
-- name: Stop WAS Servers
-  hosts: was_servers
-  serial: 2
-  become: true
-  vars:
-    __profile_name: '{{ profile_name | default(''AppSrv01'') }}'
-    __was_install_location: '{{ was_install_location  | default(''/opt/IBM/WebSphere/AppServer'') }}'
-    __servers: '{{ servers }}'
-  roles:
-    - roles/was-server-stop
+#- name: Stop WAS Servers
+#  hosts: was_servers
+#  serial: 2
+#  become: true
+#  vars:
+#    __profile_name: '{{ profile_name | default(''AppSrv01'') }}'
+#    __was_install_location: '{{ was_install_location  | default(''/opt/IBM/WebSphere/AppServer'') }}'
+#    __servers: '{{ servers }}'
+#  roles:
+#    - roles/was-server-stop
+
 - name: Stop Nodeagent
   hosts: was_servers
   become: true
@@ -16,6 +17,7 @@
     __was_install_location: '{{ was_install_location  | default(''/opt/IBM/WebSphere/AppServer'') }}'
   roles:
     - roles/was-nodeagent-stop
+
 - name: Stop Deployment Manager
   hosts: dmgr
   become: true
