@@ -8,22 +8,22 @@
   roles:
     - roles/was-dmgr-start
 
-#- name:                     Start Nodeagent
-#  hosts:                    was_servers
-#  become:                   true
-#  vars:
-#    __profile_name:         "{{ profile_name | default('Dmgr01') }}"
-#    __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
-#  roles:
-#    - roles/was-nodeagent-start
-
-- name:                     Start WAS Servers
+- name:                     Start Nodeagent
   hosts:                    was_servers
-  serial:                   2  # run sequentially
   become:                   true
   vars:
-    __profile_name:         "{{ profile_name | default('AppSrv01') }}"
+    __profile_name:         "{{ profile_name | default('Dmgr01') }}"
     __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
-    __servers:              "{{ servers }}"
   roles:
-    - roles/was-server-start    
+    - roles/was-nodeagent-start
+
+#- name:                     Start WAS Servers
+#  hosts:                    was_servers
+#  serial:                   2  # run sequentially
+#  become:                   true
+#  vars:
+#    __profile_name:         "{{ profile_name | default('AppSrv01') }}"
+#    __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
+#    __servers:              "{{ servers }}"
+#  roles:
+#    - roles/was-server-start    
