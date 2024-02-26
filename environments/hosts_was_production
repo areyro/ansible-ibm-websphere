@@ -2,6 +2,9 @@
 #
 #
 # ansible-playbook -i environments/hosts_connections6_production -u <USERNAME> -k playbooks/ibm-was-nd-complete.yml
+[all:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
 [dmgr]
 192.168.0.104
 192.168.0.123
