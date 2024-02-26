@@ -1,1 +1,20 @@
+---
+- name:                     Stop WAS Servers
+  hosts:                    was_servers
+  serial:                   2  # run sequentially
+  become:                   true
+  vars:
+    __profile_name:         "{{ profile_name | default('AppSrv01') }}"
+    __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
+    __servers:              "{{ servers }}"
+  roles:
+    - roles/was-server-stop
 
+- name:                     Stop Deployment Manager
+  hosts:                    dmgr
+  become:                   true
+  vars:
+    __profile_name:         "{{ profile_name | default('Dmgr01') }}"
+    __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
+  roles:
+    - roles/was-dmgr-stop
