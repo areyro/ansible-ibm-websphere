@@ -22,7 +22,7 @@ was_fixes_repository_url=http://192.168.1.150/was/8.5.5
 ihs_repository_url=http://192.168.1.150/was/8.5.5
 ihs_fixes_repository_url=http://192.168.1.150/was/8.5.5/FP15
 #
-was_username=wsadmin
+was_username=wasadmin
 was_password=wasadmin
 #
 dmgr_hostname=srv000.company.com
