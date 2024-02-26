@@ -18,8 +18,8 @@
 #    - roles/was-nodeagent-start
 
 - name:                     Start WAS Servers
-  hosts:                    dmgr,was_servers
-  serial:                   1  # run sequentially
+  hosts:                    was_servers
+  serial:                   2  # run sequentially
   become:                   true
   vars:
     __profile_name:         "{{ profile_name | default('AppSrv01') }}"
