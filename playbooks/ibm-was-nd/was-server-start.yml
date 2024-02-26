@@ -12,5 +12,5 @@
     __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
     __servers:              "{{ servers }}"
   roles:
-    - was-server-start
+    - roles/was-server-start
     
